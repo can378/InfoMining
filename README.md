@@ -20,9 +20,21 @@ Youtube
 YOUTUBE_API_KEY=
 GOOGLE_API_KEY=
 GOOGLE_CX=
+
+CRAWL_CONCURRENCY=12
+CRAWL_TIMEOUT_MS=30000
+CRAWL_RENDER_JS=true
+CRAWL_CACHE_DIR=.c4ai_cache
+
+# 랭킹/선정 옵션
+FINAL_N=40
+MIN_CONTENT_CHARS=800
+PROFILE_TEXT=나는 ~~ 관련 글을 좋아한다.
+
 ```
 
-GOOGLE_API_KEY= console.cloud.google에서 Create credentials누르고 API Key 선택해서 만들면된다.
+GOOGLE_API_KEY= https://console.cloud.google.com/welcome?
+에서 Create credentials누르고 API Key 선택해서 만들면된다.
 GOOGLE_CX= https://programmablesearchengine.google.com/about/ 에서 Get Started누르고 search engines를 Add하면된다. 
 
 +) search engines만들면 아래와 같은 것이 뜨는데 cx=다음이 키값이다.
