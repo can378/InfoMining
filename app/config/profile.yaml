@@ -1,0 +1,53 @@
+# config/profile.yaml
+# 🔧 "좋아할만한 것" 기준을 키워드/도메인/최근성으로 점수화합니다.
+preferences:
+  include_keywords:
+    - "computer vision"
+    - "multimodal"
+    - "pose estimation"
+    - "warehouse"
+    - "FastAPI"
+    - "MCP"
+    - "RAG"
+    - "LangChain"
+    - "AI"
+  exclude_keywords:
+    - "stock picks"
+    - "투자 수익률"
+    - "사행성"
+    - "sponsored"
+    - "casino"
+  prefer_domains:
+    - "arxiv.org"
+    - "paperswithcode.com"
+    - "towardsdatascience.com"
+    - "developer.nvidia.com"
+    - "docs.unity3d.com"
+    - "github.com"
+    - "medium.com"
+    - "openai.com"
+    - "fastapi.tiangolo.com"
+  avoid_domains:
+    - "operation21.com"
+    - "fseo99.com"
+    - "clickbait.example.com"
+
+limits:
+  final_n: 40         # 최종 상위 N개 (None이거나 누락되면 기본 40 사용)
+  min_chars: 500      # 본문 최소 길이
+  max_chars: 150000   # 본문 최대 길이(이상하면 가중 페널티)
+
+recency:
+  use_fetched_at: true    # contents.jsonl의 fetched_at을 사용
+  half_life_days: 14      # 최근일수 가중 (짧을수록 최신 선호)
+  hard_days_cutoff: 365   # 이보다 오래되면 큰 페널티
+
+weights:
+  keyword: 0.50
+  domain: 0.20
+  recency: 0.20
+  length: 0.10
+  # 가중치 합은 1.0 근처면 좋음 (정확히 1일 필요는 없음)
+
+snippets:
+  max_chars: 700       # 미리보기 본문 길이

@@ -1,0 +1,14 @@
+# 상위 K개 후보에 대해 “진짜 좋아할만한가?”를 LLM이 재점수합니다.
+llm_enabled: true
+provider: "openai"          # openai | ollama | lmstudio 등
+model: "gpt-4o-mini"
+top_k_for_llm: 60
+temperature: 0.2
+max_tokens: 300
+system_prompt: |
+  You are ranking web articles for a developer who loves Computer Vision, Multimodal, Pose Estimation, AI, digital twin, MCP tools, RAG/LangChain. Rank items by how useful they are for practical building and learning.
+user_prompt_template: |
+  Title: {title}
+  URL: {url}
+  ---
+  Score from 0 to 1 with brief reason (JSON: {"score": float, "reason": "..."})
