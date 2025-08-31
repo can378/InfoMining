@@ -42,8 +42,8 @@ CONFIG = {
     # 가져올 최대 개수
     "LIMIT": 100,
 
-    # 저장 경로(None이면 자동 경로: results/youtube_*.jsonl)
-    "OUTPATH": "results/youtube_data.jsonl",
+    # 저장 경로(None이면 자동 경로: data/youtube_*.jsonl)
+    "OUTPATH": "app/data/youtube_data.jsonl",
     # "OUTPATH": None,
 }
 # ───────────────────────────────────────────────────────────
@@ -96,7 +96,7 @@ def _default_outpath(scope: str, query: str, channel: Optional[str]) -> Path:
     else:
         ch = _slug(channel or "channel")
         name = f"youtube_channel_{ch}_{q}.jsonl"
-    return Path("results") / name
+    return Path("data") / name
 
 # ───────────────────────────────────────────────────────────
 # API 호출

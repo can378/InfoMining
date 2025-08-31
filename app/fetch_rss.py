@@ -95,4 +95,4 @@ if __name__ == "__main__":
     items = sort_by_date(items)
 
     # save file
-    save_jsonl(itertools.islice(items, 50), "results/rss_data.jsonl")
+    save_jsonl(itertools.islice(items, 50), "app/data/rss_data.jsonl")

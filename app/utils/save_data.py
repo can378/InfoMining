@@ -7,7 +7,7 @@ from typing import Iterable, Mapping, Any
 def save_jsonl(items: Iterable[Mapping[str, Any]], outpath: str | Path, limit: int | None = None) -> Path:
     """
     items: dict의 이터러블(리스트/제너레이터 모두 OK)
-    outpath: 저장할 파일 경로 (예: "results/rss_data.jsonl")
+    outpath: 저장할 파일 경로 (예: "data/rss_data.jsonl")
     limit: 앞에서부터 최대 N개만 저장 (None이면 전부)
     return: 최종 저장된 Path
     """
