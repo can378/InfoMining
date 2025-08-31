@@ -22,4 +22,4 @@ while start <= 31:  # 대략 4페이지(최대 10개씩)
 
 # MAIN =============================================================
 if __name__ =="__main__":
-    save_jsonl(all_items, "results/google_data.jsonl")
+    save_jsonl(all_items, "app/data/google_data.jsonl")
